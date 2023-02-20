@@ -1,12 +1,20 @@
 import React from "react";
 import { View,Image,Text,TextInput, TouchableOpacity, ScrollView } from "react-native";
+import {useNavigation} from '@react-navigation/native'
 
 
 export default function Tambah_Barang(){
+    const navigation = useNavigation()
     return(
-        <View style={{backgroundColor:'#f6f6f6',borderRadius:10}}>
+        <View style={{backgroundColor:'#f6f6f6',borderRadius:10,marginTop:60,marginHorizontal:20}}>
             <ScrollView>
-                <View style={{backgroundColor:'#ffffff',marginHorizontal:30,marginTop:90}}>
+                <TouchableOpacity onPress={() => {navigation.goBack()}}>
+                    <Image
+                        source={require('../assets/arrow.png')}
+                        style={{width:32,height:32,paddingTop:-40,marginBottom:20}}
+                    />
+                </TouchableOpacity>
+                <View style={{backgroundColor:'#ffffff'}}>
                     <Text style={{marginTop:40,fontSize:20,fontWeight:'bold',alignSelf:'center'}}>Tambah Barang</Text>
                     <Image
                         source={require('../assets/image-placeholder.png')}
@@ -28,7 +36,7 @@ export default function Tambah_Barang(){
                         <TextInput placeholder="Harga" style={{borderBottomWidth:1,marginRight:20,marginBottom:20,borderColor:'#e3e3e3',borderRadius:3}}></TextInput>
                     </View>
                     
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
                         <View style={{backgroundColor:'#000072',padding:10,borderRadius:10,marginTop:20,width:200,alignSelf:'center',marginBottom:40}}>
                             <Text style={{fontSize:20,color:'#ffffff',alignSelf:'center',fontWeight:'bold'}}>Tambah Barang</Text>
                         </View>

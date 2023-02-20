@@ -1,10 +1,12 @@
 import React from "react";
-import { View, Text, TouchableOpacity, ScrollView, Image } from "react-native";
+import { View, Text, TouchableOpacity, ScrollView, Image, TouchableHighlight } from "react-native";
+import {useNavigation} from '@react-navigation/native'
 
 export default function List_Barang(){
+    const navigation = useNavigation()
     return(
         <View style={{marginTop:100,marginHorizontal:20}}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => {navigation.goBack()}}>
                 <Image
                     source={require('../assets/arrow.png')}
                     style={{width:32,height:32,marginTop:-40,marginBottom:20}}
@@ -44,7 +46,7 @@ export default function List_Barang(){
                         <Text style={{fontSize:20,fontWeight:'bold'}}>Rp.5.000,-</Text>
                     </View>
                     <View style={{marginTop:20,marginLeft:20}}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => {navigation.navigate('Tambah_Barang')}}>
                             <View style={{backgroundColor:'#000072',borderRadius:10,height:30,width:80,marginBottom:10,marginLeft:45}}>
                                 <Text style={{fontWeight:'bold',color:'#ffffff',alignSelf:'center',marginTop:5}}>Edit</Text>
                             </View>
@@ -102,7 +104,7 @@ export default function List_Barang(){
                 </View>
                 <View style={{marginBottom:0}}></View>
             </ScrollView>
-            <TouchableOpacity>
+            <TouchableOpacity onPressIn={() => {navigation.navigate('Tambah_Barang')}}>
                 <View style={{backgroundColor:'#000072',borderRadius:10,height:50,width:200,marginBottom:10,marginLeft:45,position:'absolute',bottom:90,alignSelf:'center'}}>
                     <Text style={{fontWeight:'bold',color:'#ffffff',alignSelf:'center',marginTop:15}}>+   Tambah Barang</Text>
                 </View>

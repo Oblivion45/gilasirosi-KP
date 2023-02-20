@@ -1,8 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React from 'react'; 
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, Image,ScrollView } from 'react-native';
+import {useNavigation} from '@react-navigation/native'
 import Footer from '../component/footer';
-export default function Home(navigation) {
+
+export default function Home() {
+    const navigation = useNavigation()
   return (
     <View style={styles.background}>
         <ScrollView>
@@ -22,7 +25,7 @@ export default function Home(navigation) {
                         placeholder='Cari...'
                         style={styles.searchinput}
                     ></TextInput>
-                    <TouchableOpacity>
+                    <TouchableOpacity color='#ffffff' onPress={() => {navigation.navigate('Kategori')}}>
                         <View style={styles.searchbutton}>
                             <Image
                                 source={require('../assets/search.png')}
@@ -33,56 +36,64 @@ export default function Home(navigation) {
                 </View>
                 <Text style={styles.produk}>Produk</Text>
                 <View style={styles.cardflex}>
-                    <View style={{flexDirection:'column',padding:5,borderRadius:10,marginHorizontal:5}}>
-                        <Image
-                            source={require('../assets/landingpage.jpeg')}
-                            style={{height:200,width:150,borderRadius:10}}
-                        />
-                        <View style={{backgroundColor:'#000072',borderRadius:10,height:30,width:80,marginTop:10,alignSelf:'center'}}>
-                            <Text style={{fontWeight:'bold',color:'#ffffff',alignSelf:'center',marginTop:5}}>Makanan</Text>
+                    <TouchableOpacity color='#ffffff'>
+                        <View style={{flexDirection:'column',padding:5,borderRadius:10,marginHorizontal:5}}>
+                            <Image
+                                source={require('../assets/landingpage.jpeg')}
+                                style={{height:200,width:150,borderRadius:10}}
+                            />
+                            <View style={{backgroundColor:'#000072',borderRadius:10,height:30,width:80,marginTop:10,alignSelf:'center'}}>
+                                <Text style={{fontWeight:'bold',color:'#ffffff',alignSelf:'center',marginTop:5}}>Makanan</Text>
+                            </View>
+                            <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Stick Jahe</Text>
+                            <Text style={{alignSelf:'center',fontSize:12,paddingTop:5}}>Stick Jahe Makanan Ringan</Text>
+                            <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Rp.16.000,00</Text>
                         </View>
-                        <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Stick Jahe</Text>
-                        <Text style={{alignSelf:'center',fontSize:12,paddingTop:5}}>Stick Jahe Makanan Ringan</Text>
-                        <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Rp.16.000,00</Text>
-                    </View>
-                    <View style={{flexDirection:'column',padding:5,borderRadius:10}}>
-                        <Image
-                            source={require('../assets/rumahtangga.jpg')}
-                            style={{height:200,width:150,borderRadius:10}}
-                        />
-                        <View style={{backgroundColor:'#000072',borderRadius:10,height:30,width:80,marginTop:10,alignSelf:'center'}}>
-                            <Text style={{fontWeight:'bold',color:'#ffffff',alignSelf:'center',marginTop:5,fontSize:11}}>Rumah Tangga</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity color='#ffffff'>
+                        <View style={{flexDirection:'column',padding:5,borderRadius:10}}>
+                            <Image
+                                source={require('../assets/rumahtangga.jpg')}
+                                style={{height:200,width:150,borderRadius:10}}
+                            />
+                            <View style={{backgroundColor:'#000072',borderRadius:10,height:30,width:80,marginTop:10,alignSelf:'center'}}>
+                                <Text style={{fontWeight:'bold',color:'#ffffff',alignSelf:'center',marginTop:5,fontSize:11}}>Rumah Tangga</Text>
+                            </View>
+                            <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Wood Plate</Text>
+                            <Text style={{alignSelf:'center',fontSize:12,paddingTop:5}}>Piring Kayu Besar</Text>
+                            <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Rp.32.000,00</Text>
                         </View>
-                        <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Wood Plate</Text>
-                        <Text style={{alignSelf:'center',fontSize:12,paddingTop:5}}>Piring Kayu Besar</Text>
-                        <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Rp.32.000,00</Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <View style={{flexDirection:'row',marginHorizontal:-10}}>
-                    <View style={{flexDirection:'column',padding:5,borderRadius:10,marginHorizontal:5}}>
-                        <Image
-                            source={require('../assets/jasa.jpg')}
-                            style={{height:200,width:150,borderRadius:10}}
-                        />
-                        <View style={{backgroundColor:'#000072',borderRadius:10,height:30,width:80,marginTop:10,alignSelf:'center'}}>
-                            <Text style={{fontWeight:'bold',color:'#ffffff',alignSelf:'center',marginTop:5}}>Jasa</Text>
+                    <TouchableOpacity color='#ffffff'>
+                        <View style={{flexDirection:'column',padding:5,borderRadius:10,marginHorizontal:5}}>
+                            <Image
+                                source={require('../assets/jasa.jpg')}
+                                style={{height:200,width:150,borderRadius:10}}
+                            />
+                            <View style={{backgroundColor:'#000072',borderRadius:10,height:30,width:80,marginTop:10,alignSelf:'center'}}>
+                                <Text style={{fontWeight:'bold',color:'#ffffff',alignSelf:'center',marginTop:5}}>Jasa</Text>
+                            </View>
+                            <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Fotocopy</Text>
+                            <Text style={{alignSelf:'center',fontSize:12,paddingTop:5}}>Jasa Fotocopy / Print</Text>
+                            <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Rp.250,00</Text>
                         </View>
-                        <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Fotocopy</Text>
-                        <Text style={{alignSelf:'center',fontSize:12,paddingTop:5}}>Jasa Fotocopy / Print</Text>
-                        <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Rp.250,00</Text>
-                    </View>
-                    <View style={{flexDirection:'column',padding:5,borderRadius:10}}>
-                        <Image
-                            source={require('../assets/kerajinan.jpg')}
-                            style={{height:200,width:150,borderRadius:10}}
-                        />
-                        <View style={{backgroundColor:'#000072',borderRadius:10,height:30,width:80,marginTop:10,alignSelf:'center'}}>
-                            <Text style={{fontWeight:'bold',color:'#ffffff',alignSelf:'center',marginTop:5}}>Kerajinan</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity UnderlayColor='white' onPress={() => {navigation.navigate('Detail')}}>
+                        <View style={{flexDirection:'column',padding:5,borderRadius:10}}>
+                            <Image
+                                source={require('../assets/kerajinan.jpg')}
+                                style={{height:200,width:150,borderRadius:10}}
+                            />
+                            <View style={{backgroundColor:'#000072',borderRadius:10,height:30,width:80,marginTop:10,alignSelf:'center'}}>
+                                <Text style={{fontWeight:'bold',color:'#ffffff',alignSelf:'center',marginTop:5}}>Kerajinan</Text>
+                            </View>
+                            <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Bros Dagu</Text>
+                            <Text style={{alignSelf:'center',fontSize:12,paddingTop:5}}>Bros Dagu Safitri</Text>
+                            <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Rp.5.000,00</Text>
                         </View>
-                        <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Bros Dagu</Text>
-                        <Text style={{alignSelf:'center',fontSize:12,paddingTop:5}}>Bros Dagu Safitri</Text>
-                        <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Rp.5.000,00</Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
             </View>
         </ScrollView>

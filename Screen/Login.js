@@ -1,7 +1,9 @@
 import React from "react";
 import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
+import { useNavigation } from '@react-navigation/native'
 
 export default function Login(){
+    const navigation = useNavigation()
     return (
         <View style={{marginHorizontal:30}}>
             <View style={{backgroundColor:'#ffffff',marginTop:60}}>
@@ -19,7 +21,7 @@ export default function Login(){
                     secureTextEntry={true}
                     style={{borderRadius:10,borderWidth:1,padding:10,borderColor:'#d6d6d6',width:250,alignSelf:'center',marginBottom:20}}
                 ></TextInput>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Home')}>
                     <View style={{backgroundColor:'#000072',width:250,padding:10,borderRadius:10,alignSelf:'center',marginTop:10}}>
                         <Text style={{fontSize:20,color:"#ffffff",fontWeight:'bold',alignSelf:'center'}}>Login</Text>
                     </View>

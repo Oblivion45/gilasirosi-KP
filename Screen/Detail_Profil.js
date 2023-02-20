@@ -1,10 +1,11 @@
 import React from "react";
 import { View, Image, Text, TextInput, TouchableOpacity } from "react-native";
-
+import {useNavigation} from '@react-navigation/native'
 export default function Detail_Profil(){
+    const navigation = useNavigation()
     return (
         <View style={{marginHorizontal:20,marginTop:100}}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => {navigation.goBack()}}>
                 <Image
                     source={require('../assets/arrow.png')}
                     style={{width:32,height:32,marginTop:-40,marginBottom:20}}

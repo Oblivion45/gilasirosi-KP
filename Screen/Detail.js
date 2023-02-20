@@ -1,8 +1,9 @@
 import React from "react";
-import { View, Image, Text, TouchableOpacity } from "react-native";
+import { View, Image, Text, TouchableOpacity,TouchableHighlight } from "react-native";
 import Footer from "../component/footer";
-
+import {useNavigation} from '@react-navigation/native'
 export default function Detail(){
+    const navigation = useNavigation()
     return (
         <View style={{backgroundColor:'#f6f6f6'}}>
             <View>
@@ -10,7 +11,7 @@ export default function Detail(){
                     source={require('../assets/kerajinan.jpg')}
                     style={{width:360,height:320,alignSelf:'center'}}
                 />
-                <TouchableOpacity>
+                <TouchableOpacity onPressIn={() => {navigation.goBack()}}>
                     <Image
                         source={require('../assets/arrow.png')}
                         style={{width:32,height:32,marginTop:-280,marginLeft:20}}

@@ -1,7 +1,9 @@
 import React from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, Image,ScrollView } from 'react-native';
+import {useNavigation} from '@react-navigation/native'
 
 export default function Edit_Barang(){
+    const navigation = useNavigation()
     return (
         <View style={{backgroundColor:'#f6f6f6'}}>
             <ScrollView>
@@ -27,7 +29,7 @@ export default function Edit_Barang(){
                         <TextInput value='7.000' style={{borderBottomWidth:1,marginRight:20,marginBottom:20,borderColor:'#e3e3e3',borderRadius:3}}></TextInput>
                     </View>
                     
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => {navigation.goBack()}}>
                         <View style={{backgroundColor:'#000072',padding:10,borderRadius:10,marginTop:20,width:200,alignSelf:'center',marginBottom:40}}>
                             <Text style={{fontSize:16,color:'#ffffff',alignSelf:'center',fontWeight:'bold'}}>Simpan Perubahan</Text>
                         </View>
