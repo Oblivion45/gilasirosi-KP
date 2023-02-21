@@ -17,7 +17,7 @@ export default function Detail(){
                         style={{width:32,height:32,marginTop:-280,marginLeft:20}}
                     />
                 </TouchableOpacity>
-                <View style={{borderRadius:40,marginTop:-30,backgroundColor:"#ffffff",alignSelf:'center',width:360,height:1000,flexDirection:'row'}}>
+                <View style={{marginTop:-30,backgroundColor:"#ffffff",alignSelf:'center',width:360,height:1000,flexDirection:'row'}}>
                     <View style={{marginLeft:30,marginTop:20}}>
                         <Text style={{fontSize:24,fontWeight:'bold'}}>Bros Dagu</Text>
                         <Text style={{paddingTop:10,fontSize:16}}>Bros Dagu Safitri handmade</Text>

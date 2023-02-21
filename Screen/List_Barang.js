@@ -46,7 +46,7 @@ export default function List_Barang(){
                         <Text style={{fontSize:20,fontWeight:'bold'}}>Rp.5.000,-</Text>
                     </View>
                     <View style={{marginTop:20,marginLeft:20}}>
-                        <TouchableOpacity onPress={() => {navigation.navigate('Tambah_Barang')}}>
+                        <TouchableOpacity onPress={() => {navigation.navigate('Edit_Barang')}}>
                             <View style={{backgroundColor:'#000072',borderRadius:10,height:30,width:80,marginBottom:10,marginLeft:45}}>
                                 <Text style={{fontWeight:'bold',color:'#ffffff',alignSelf:'center',marginTop:5}}>Edit</Text>
                             </View>
