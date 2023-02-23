@@ -13,7 +13,7 @@ export default function Detail_Profil(){
             </TouchableOpacity>
             <Text style={{fontSize:20,fontWeight:'bold',alignSelf:'center'}}>Edit Profil</Text>
             <Image
-                source={require('../assets/profile.jpg')}
+                source={require('../assets/umkm.jpg')}
                 style={{width:80,height:80,alignSelf:'center',marginTop:30,borderRadius:10,marginBottom:30}}
             />
             <View style={{backgroundColor:'#ffffff',borderRadius:20,paddingHorizontal:5,paddingTop:20,height:300}}>

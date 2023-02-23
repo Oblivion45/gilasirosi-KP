@@ -10,7 +10,7 @@ export default function Profil () {
             <View style={{backgroundColor:'#ffffff',width:300,height:100,marginTop:110,borderRadius:20}}>
                 <View style={{flexDirection:'row',marginTop:20}}>
                     <Image
-                        source={require('../assets/profile.jpg')}
+                        source={require('../assets/umkm.jpg')}
                         style={{width:60,height:60,marginLeft:20,borderRadius:10}}
                     />
                     <View style={{flexDirection:'column',marginLeft:20,marginTop:10}}>

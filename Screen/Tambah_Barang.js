@@ -1,44 +1,44 @@
 import React from "react";
-import { View,Image,Text,TextInput, TouchableOpacity, ScrollView } from "react-native";
+import { StyleSheet,View,Image,Text,TextInput, TouchableOpacity, ScrollView } from "react-native";
 import {useNavigation} from '@react-navigation/native'
 
 
 export default function Tambah_Barang(){
     const navigation = useNavigation()
     return(
-        <View style={{backgroundColor:'#f6f6f6',borderRadius:10,marginTop:60,marginHorizontal:20}}>
+        <View style={styles.background}>
             <ScrollView>
-                <TouchableOpacity onPress={() => {navigation.goBack()}}>
-                    <Image
-                        source={require('../assets/arrow.png')}
-                        style={{width:32,height:32,paddingTop:-40,marginBottom:20}}
-                    />
-                </TouchableOpacity>
-                <View style={{backgroundColor:'#ffffff'}}>
-                    <Text style={{marginTop:40,fontSize:20,fontWeight:'bold',alignSelf:'center'}}>Tambah Barang</Text>
+                <View style={styles.container}>
+                    <TouchableOpacity onPress={() => {navigation.goBack()}}>
+                        <Image
+                            source={require('../assets/arrow.png')}
+                            style={styles.backbutton}
+                        />
+                    </TouchableOpacity>
+                    <Text style={styles.tambahtitle}>Tambah Barang</Text>
                     <Image
                         source={require('../assets/image-placeholder.png')}
-                        style={{width:200,height:200,alignSelf:'center',marginTop:20}}
+                        style={styles.imageplaceholder}
                     />
                     <TouchableOpacity>
-                        <View style={{backgroundColor:'#000072',padding:10,borderRadius:10,marginTop:20,width:200,alignSelf:'center'}}>
-                            <Text style={{fontSize:20,color:'#ffffff',alignSelf:'center',fontWeight:'bold'}}>Tambah Gambar</Text>
+                        <View style={styles.tambahgambarbutton}>
+                            <Text style={styles.tambahgambarbuttontext}>Tambah Gambar</Text>
                         </View>
                     </TouchableOpacity>
-                    <View style={{marginLeft:20,marginTop:30}}>
-                        <Text style={{fontSize:16,fontWeight:'bold'}}>Nama Barang</Text>
-                        <TextInput placeholder="Nama" style={{borderBottomWidth:1,marginRight:20,marginBottom:20,borderColor:'#e3e3e3',borderRadius:3}}></TextInput>
-                        <Text style={{fontSize:16,fontWeight:'bold'}}>Kategori</Text>
-                        <TextInput placeholder="Dropdown" style={{borderBottomWidth:1,marginRight:20,marginBottom:20,borderColor:'#e3e3e3',borderRadius:3}}></TextInput>
-                        <Text style={{fontSize:16,fontWeight:'bold'}}>Deskripsi</Text>
-                        <TextInput placeholder="Deskripsi" style={{borderBottomWidth:1,marginRight:20,marginBottom:20,borderColor:'#e3e3e3',borderRadius:3,paddingTop:5}}></TextInput>
-                        <Text style={{fontSize:16,fontWeight:'bold'}}>Harga</Text>
-                        <TextInput placeholder="Harga" style={{borderBottomWidth:1,marginRight:20,marginBottom:20,borderColor:'#e3e3e3',borderRadius:3}}></TextInput>
+                    <View style={styles.formcontainer}>
+                        <Text style={styles.formdatatitle}>Nama Barang</Text>
+                        <TextInput placeholder="Nama" style={styles.datainput}></TextInput>
+                        <Text style={styles.formdatatitle}>Kategori</Text>
+                        <TextInput placeholder="Dropdown" style={styles.datainput}></TextInput>
+                        <Text style={styles.formdatatitle}>Deskripsi</Text>
+                        <TextInput placeholder="Deskripsi" style={styles.datainput}></TextInput>
+                        <Text style={styles.formdatatitle}>Harga</Text>
+                        <TextInput placeholder="Harga" style={styles.datainput}></TextInput>
                     </View>
                     
                     <TouchableOpacity onPress={() => navigation.goBack()}>
-                        <View style={{backgroundColor:'#000072',padding:10,borderRadius:10,marginTop:20,width:200,alignSelf:'center',marginBottom:40}}>
-                            <Text style={{fontSize:20,color:'#ffffff',alignSelf:'center',fontWeight:'bold'}}>Tambah Barang</Text>
+                        <View style={styles.tambahbarangbutton}>
+                            <Text style={styles.tambahbarangbuttontext}>Tambah Barang</Text>
                         </View>
                     </TouchableOpacity>
                 </View>
@@ -46,3 +46,41 @@ export default function Tambah_Barang(){
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    background:{
+        backgroundColor:'#f6f6f6',borderRadius:10,marginTop:60,marginHorizontal:30
+    },
+    container:{
+        backgroundColor:'#ffffff',marginTop:-20
+    },
+    backbutton:{
+        width:32,height:32,marginTop:40,marginLeft:20
+    },
+    tambahtitle:{
+        marginTop:20,fontSize:20,fontWeight:'bold',alignSelf:'center'
+    },
+    imageplaceholder:{
+        width:200,height:200,alignSelf:'center',marginTop:20
+    },
+    tambahgambarbutton:{
+        backgroundColor:'#000072',padding:10,borderRadius:10,marginTop:20,width:200,alignSelf:'center'
+    },
+    tambahgambarbuttontext:{
+        fontSize:20,color:'#ffffff',alignSelf:'center',fontWeight:'bold'
+    },
+    formcontainer:{
+        marginLeft:20,marginTop:30
+    },
+    formdatatitle:{
+        fontSize:16,fontWeight:'bold'
+    },
+    datainput:{
+        borderBottomWidth:1,marginRight:20,marginBottom:20,borderColor:'#e3e3e3',borderRadius:3
+    },
+    tambahbarangbutton:{
+        backgroundColor:'#000072',padding:10,borderRadius:10,marginTop:20,width:200,alignSelf:'center',marginBottom:40
+    },tambahbarangbuttontext:{
+        fontSize:20,color:'#ffffff',alignSelf:'center',fontWeight:'bold'
+    }
+})

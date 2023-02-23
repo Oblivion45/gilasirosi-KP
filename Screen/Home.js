@@ -37,61 +37,61 @@ export default function Home() {
                 <Text style={styles.produk}>Produk</Text>
                 <View style={styles.cardflex}>
                     <TouchableOpacity color='#ffffff'>
-                        <View style={{flexDirection:'column',padding:5,borderRadius:10,marginHorizontal:5}}>
+                        <View style={styles.cardcontainer}>
                             <Image
                                 source={require('../assets/landingpage.jpeg')}
-                                style={{height:200,width:150,borderRadius:10}}
+                                style={styles.produkimage}
                             />
-                            <View style={{backgroundColor:'#000072',borderRadius:10,height:30,width:80,marginTop:10,alignSelf:'center'}}>
-                                <Text style={{fontWeight:'bold',color:'#ffffff',alignSelf:'center',marginTop:5}}>Makanan</Text>
+                            <View style={styles.kategori}>
+                                <Text style={styles.kategoritext}>Makanan</Text>
                             </View>
-                            <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Stick Jahe</Text>
-                            <Text style={{alignSelf:'center',fontSize:12,paddingTop:5}}>Stick Jahe Makanan Ringan</Text>
-                            <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Rp.16.000,00</Text>
+                            <Text style={styles.produktitleharga}>Stick Jahe</Text>
+                            <Text style={styles.description}>Stick Jahe Makanan Ringan</Text>
+                            <Text style={styles.produktitleharga}>Rp.16.000,00</Text>
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity color='#ffffff'>
-                        <View style={{flexDirection:'column',padding:5,borderRadius:10}}>
+                        <View style={styles.cardcontainer}>
                             <Image
                                 source={require('../assets/rumahtangga.jpg')}
-                                style={{height:200,width:150,borderRadius:10}}
+                                style={styles.produkimage}
                             />
-                            <View style={{backgroundColor:'#000072',borderRadius:10,height:30,width:80,marginTop:10,alignSelf:'center'}}>
-                                <Text style={{fontWeight:'bold',color:'#ffffff',alignSelf:'center',marginTop:5,fontSize:11}}>Rumah Tangga</Text>
+                            <View style={styles.kategori}>
+                                <Text style={styles.kategoritext}>Rumah Tangga</Text>
                             </View>
-                            <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Wood Plate</Text>
-                            <Text style={{alignSelf:'center',fontSize:12,paddingTop:5}}>Piring Kayu Besar</Text>
-                            <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Rp.32.000,00</Text>
+                            <Text style={styles.produktitleharga}>Wood Plate</Text>
+                            <Text style={styles.description}>Piring Kayu Besar</Text>
+                            <Text style={styles.produktitleharga}>Rp.32.000,00</Text>
                         </View>
                     </TouchableOpacity>
                 </View>
-                <View style={{flexDirection:'row',marginHorizontal:-10}}>
+                <View style={styles.cardflex}>
                     <TouchableOpacity color='#ffffff'>
-                        <View style={{flexDirection:'column',padding:5,borderRadius:10,marginHorizontal:5}}>
+                        <View style={styles.cardcontainer}>
                             <Image
                                 source={require('../assets/jasa.jpg')}
-                                style={{height:200,width:150,borderRadius:10}}
+                                style={styles.produkimage}
                             />
-                            <View style={{backgroundColor:'#000072',borderRadius:10,height:30,width:80,marginTop:10,alignSelf:'center'}}>
-                                <Text style={{fontWeight:'bold',color:'#ffffff',alignSelf:'center',marginTop:5}}>Jasa</Text>
+                            <View style={styles.kategori}>
+                                <Text style={styles.kategoritext}>Jasa</Text>
                             </View>
-                            <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Fotocopy</Text>
-                            <Text style={{alignSelf:'center',fontSize:12,paddingTop:5}}>Jasa Fotocopy / Print</Text>
-                            <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Rp.250,00</Text>
+                            <Text style={styles.produktitleharga}>Fotocopy</Text>
+                            <Text style={styles.description}>Jasa Fotocopy / Print</Text>
+                            <Text style={styles.produktitleharga}>Rp.250,00</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity UnderlayColor='white' onPress={() => {navigation.navigate('Detail')}}>
-                        <View style={{flexDirection:'column',padding:5,borderRadius:10}}>
+                    <TouchableOpacity onPress={() => {navigation.navigate('Detail')}}>
+                        <View style={styles.cardcontainer}>
                             <Image
                                 source={require('../assets/kerajinan.jpg')}
-                                style={{height:200,width:150,borderRadius:10}}
+                                style={styles.produkimage}
                             />
-                            <View style={{backgroundColor:'#000072',borderRadius:10,height:30,width:80,marginTop:10,alignSelf:'center'}}>
-                                <Text style={{fontWeight:'bold',color:'#ffffff',alignSelf:'center',marginTop:5}}>Kerajinan</Text>
+                            <View style={styles.kategori}>
+                                <Text style={styles.kategoritext}>Kerajinan</Text>
                             </View>
-                            <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Bros Dagu</Text>
-                            <Text style={{alignSelf:'center',fontSize:12,paddingTop:5}}>Bros Dagu Safitri</Text>
-                            <Text style={{alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'}}>Rp.5.000,00</Text>
+                            <Text style={styles.produktitleharga}>Bros Dagu</Text>
+                            <Text style={styles.description}>Bros Dagu Safitri</Text>
+                            <Text style={styles.produktitleharga}>Rp.5.000,00</Text>
                         </View>
                     </TouchableOpacity>
                 </View>
@@ -155,5 +155,32 @@ const styles = ({
         cardflex:{
             flexDirection:'row',
             marginHorizontal:-10
+        },
+
+    cardcontainer:{
+            flexDirection:'column',
+            padding:5,
+            borderRadius:10,
+            marginHorizontal:5
+        },
+
+        produkimage:{
+            height:200,width:150,borderRadius:10
+        },
+
+        kategori:{
+            backgroundColor:'#000072',borderRadius:10,height:30,width:80,marginTop:10,alignSelf:'center'
+        },
+
+        kategoritext:{
+            fontWeight:'bold',color:'#ffffff',alignSelf:'center',marginTop:5,fontSize:11
+        },
+
+        produktitleharga:{
+            alignSelf:'center',fontSize:16,paddingTop:5,fontWeight:'bold'
+        },
+
+        description:{
+            alignSelf:'center',fontSize:12,paddingTop:5
         }
 })
