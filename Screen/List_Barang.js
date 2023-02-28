@@ -28,6 +28,19 @@ class List_Barang extends Component{
         })
     }
 
+    async deleteBarang(id){
+        await fetch("http://10.100.0.105/gilasirosi/api.php/?op=delete&id="+id)
+        .then((response)=>response.json())
+        .then((json)=>{
+            alert('Data Berhasil Dihapus')
+            console.log("Data Sudah Dihapus")
+            this.ambilListBarang()
+        }) 
+        .catch((error)=>{
+            console.log(error)
+        })
+    }
+
     render(){
         return(
             <View style={styles.container}>
@@ -56,7 +69,7 @@ class List_Barang extends Component{
                                             <Text style={styles.kategoritext}>Edit</Text>
                                         </View>
                                     </TouchableOpacity>
-                                    <TouchableOpacity>
+                                    <TouchableOpacity onPress={()=>this.deleteBarang(val.bar_id)}>
                                         <View style={styles.deleletebutton}>
                                             <Text style={styles.kategoritext}>Hapus</Text>
                                         </View>
